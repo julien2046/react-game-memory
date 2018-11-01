@@ -1,0 +1,62 @@
+Les données déscendent, l'état remonte.
+
+Les fonctions fléchées contournent ce problème en ne redéfinissant aucun identifiant
+lors de leur invocation (pas même this).
+
+On peut fournir à un composant des attributs, appeplés props en terminologie React.
+Ces props sont définies par un ensemble de clés/valeurs, définies dans un objet, qui
+est passé en argument à la fonction du composant. Cet objet est alors déstructuré
+automatiquement.
+
+Dansd JSX, on n'a en gros que deux possibilités: un littéral String matérialisé
+par les doubles-quotes ou une expression JSX, définie entre accolades.
+
+La délégation d'événements: on attache nos gestionnaires le plus haut possible dans
+notre grappe applicative et on tire parti de la propagation des événements à travers le DOM
+pour reconnecter gestionnaires et éléments cliblés.
+React ne définit qu'un seul gestionnaire d'événements pour tous les clics, à la racine de
+la grappe applicative.
+
+Afin de faciliter le recours aux tableaux, JSX va automatiquement ignorer certaines valeurs y
+figurant, notamment true, false, null et undefined.
+
+Très fréquemment nous aurons des méthodes métier qui seront passées par référence dans des props,
+notamment pour les gestionnaires d'événements et fonctions de rappel.
+
+Le problème ici est qu’à chaque  render()  produisant cette grappe, on crée de nouvelles fonctions
+pour les passer aux props : outre le coût de création et d’occupation mémoire associé, les composants
+ainsi paramétrés ont l’impression de recevoir des props différentes à chaque fois.
+Elles considéreront qu’ils devront re-renderer eux-mêmes, y compris lorsque cela est en fait superflu.
+
+lift state:
+1. faire « redescendre » ces infos à coup de props jusqu’aux composants qui en ont besoin.
+2. faire « remonter » les demandes d’évolution à coup de props de type fonction,
+fournies par le composant doté de l’état local, et utilisées par les composants qui en ont besoin.
+
+TDD
+On écrit les tests avant même d'écrire le code à tester.
+
+Assertion
+La brique élémentaire de nos tests est une assertion. Il s'agit tout simplement d'un morceau de code
+qui vérifie qu'une condition est bien remplie.
+
+Tests
+Un test est un petit bloc de code qui pose une question précise et en vérifie la réponse.
+
+Harnais
+Un harnais de test est un programme qui agit en quelque sorte comme le chef d'orchestre de vos tests.
+
+Intégration continue
+Il est courrant de mettre en place une intégration continue, qui va réagir à tout envoi de code sur votre serveur
+de versions en récupérant le code à jour pour exécuter, sur un système dédié, l'ensemble de vos tests, et faire
+un rapport généralement intégré à votre gestion de sources.
+
+Courverture de tests
+Pourcentage de code qui est sollicité par les tests.
+
+Jest -> Assertions
+
+Chai -> Assertions
+Chai-diff -> Affichage détaillé
+
+Enzyme -> Tester les composants en isolation

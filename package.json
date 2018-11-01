@@ -1,0 +1,31 @@
+{
+  "name": "react-open-tuto",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "chai": "^4.1.2",
+    "lodash.shuffle": "^4.2.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom --watchAll",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "chai-enzyme": "^1.0.0-beta.1",
+    "chai-jest-diff": "^1.0.2",
+    "chai-jest-snapshot": "^2.0.0",
+    "dirty-chai": "^2.0.1",
+    "enzyme": "^3.4.1",
+    "enzyme-adapter-react-16": "^1.2.0",
+    "enzyme-to-json": "^3.3.4",
+    "react-test-renderer": "^16.4.2",
+    "sinon": "^6.1.5",
+    "sinon-chai": "^3.2.0"
+  }
+}
